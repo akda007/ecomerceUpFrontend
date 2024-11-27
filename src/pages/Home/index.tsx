@@ -61,7 +61,12 @@ export default function Home() {
                 
 
                 <Grid mt={4} container spacing={10} columnSpacing={{xs: 12, sm: 6, md: 4, xl: 3}}>
-                    
+                    { (() => {
+                        if (products.length === 0)
+                            return <Typography>Nenhum produto disponivel</Typography>
+                            
+                        return <></>
+                    })()}
                     {products.map(p => 
                         <Grid size={{xs: 12, sm: 6, md: 4, xl: 3}}>
                             <ProductView 

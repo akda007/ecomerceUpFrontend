@@ -1,4 +1,5 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 type ProductViewProps = {
     id: number
@@ -16,9 +17,19 @@ export default function ProductView({id, name, description, price, stock, onClic
             padding={2}
             borderRadius={4}
             boxShadow={"3px 3px 10px 0px #0000007b"}
+            position={"relative"}
         >
+            
+
             <Stack flexDirection={"row"} alignItems={"center"} justifyContent={"space-between"} mb={2}>
-                <Typography variant="h5">{name}</Typography>
+                <Stack flexDirection={"row"} gap={"5px"} alignItems={"center"}>
+                    <Typography variant="h5">{name}</Typography>
+                    <Link to={`/edit-product?id=${id}&name=${name}&price=${price}&stock=${stock}&description=${description}`}>
+                        <span className="material-symbols-outlined">edit</span>
+                    </Link>
+                </Stack>
+                
+                
                 <Typography>Stock: {stock}</Typography>
             </Stack>
 

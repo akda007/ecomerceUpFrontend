@@ -4,7 +4,7 @@ import { Button, Stack, TextField, Typography } from "@mui/material";
 import logo from "../../assets/logo.svg"
 import { useState } from "react";
 import { useAuth } from "../../context/AuthenticationContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../axios/api";
 import { AxiosError } from "axios";
 import { toast } from "react-toastify";
@@ -70,7 +70,13 @@ export default function Login() {
                         <TextField label="Login" value={username} onChange={(e) => setUsername(e.target.value)}></TextField>
                         <TextField label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></TextField>
 
-                        <Button variant="contained" sx={{marginTop: 3}} fullWidth onClick={handleLogin}>SIGN IN</Button>
+
+                        <Stack gap={1} mt={1}>
+                            <Link to={"/register"} replace>
+                                <Button variant="outlined" fullWidth>REGISTER</Button>
+                            </Link>
+                            <Button variant="contained"  fullWidth onClick={handleLogin}>SIGN IN</Button>
+                        </Stack>
                     </Stack>
                 </Stack>
             </Stack>

@@ -41,6 +41,14 @@ export default function Navbar() {
                     <HomeButton variant="h6">Home</HomeButton>
                 </StyledLink>
 
+                <StyledLink to={"/create-product"}>
+                    <HomeButton variant="h6">Create Product</HomeButton>
+                </StyledLink>
+
+                <StyledLink to={"/list-supplier"}>
+                    <HomeButton variant="h6">List/Register Supplier</HomeButton>
+                </StyledLink>
+
                 <Stack flexDirection={"row"} style={{marginLeft: 'auto'}} alignItems={"center"} gap={3}>
                     <StyledLink to={"/kart"} >
                         <img src={kart} style={{objectFit: "cover", height: "40px"}}></img>
