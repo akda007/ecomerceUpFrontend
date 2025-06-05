@@ -1,6 +1,8 @@
 import axios from "axios";
 
+if (!import.meta.env.VITE_API_URL)
+    throw new Error("Variable API_URL is not set!")
 
 export const api = axios.create({
-    baseURL: "http://localhost:8080"
+    baseURL: import.meta.env.VITE_API_URL
 })
