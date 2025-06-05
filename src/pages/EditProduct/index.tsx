@@ -4,11 +4,11 @@ import { useState } from "react";
 import { AxiosError } from "axios";
 import { api } from "../../axios/api";
 import { toast } from "react-toastify";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../../context/AuthenticationContext";
 
 export default function EditProduct() {
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [searchParams] = useSearchParams()
     
     const id = searchParams.get("id")
 
